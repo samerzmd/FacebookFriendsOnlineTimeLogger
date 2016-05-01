@@ -9,11 +9,11 @@ namespace FacebookFriendsOnlineTimeLogger.Controllers
 {
     public class UsersController : Controller
     {
-        private List<User> Users = new List<User>();
+        private static List<User> Users = new List<User>(); //facebook allows 5000 friends MAX, my server is a 20GB ram XD theoretically it can handle it 
         // GET: Users
         public ActionResult Index()
         {
-            return View();
+            return View(Users);
         }
 
         public ActionResult RegisterResult(List<string> userNames)
